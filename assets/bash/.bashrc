@@ -241,6 +241,11 @@ function far () {
     find . -type f -exec sed -i "$1" {} +
 }
 
+function setup_videoconf_headset () {
+    pactl set-default-source alsa_input.usb-Generic_TX-Hifi_Type_C_Audio-00.analog-stereo
+    pactl set-default-sink alsa_output.usb-Generic_TX-Hifi_Type_C_Audio-00.analog-stereo
+}
+
 if [[ -f "$HOME/.bash_profile" ]]; then
     . "$HOME/.bash_profile"
 fi
