@@ -243,7 +243,13 @@ function far () {
 
 function setup_videoconf_headset () {
     pactl set-default-source alsa_input.usb-Generic_TX-Hifi_Type_C_Audio-00.analog-stereo
-    pactl set-default-sink alsa_output.usb-Generic_TX-Hifi_Type_C_Audio-00.analog-stereo
+    pactl set-default-sink alsa_output.usb-Generic_TX-Hifi_Type_C_Audio-00.iec958-stereo
+    # TODO set the volume as well.
+}
+
+function setup_videoconf_with_mic () {
+    pactl set-default-source alsa_input.usb-Audio_Technica_Corp_ATR2100x-USB_Microphone-00.analog-stereo
+    pactl set-default-sink alsa_output.usb-Generic_TX-Hifi_Type_C_Audio-00.iec958-stereo
     # TODO set the volume as well.
 }
 
