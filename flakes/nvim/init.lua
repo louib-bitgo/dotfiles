@@ -184,6 +184,21 @@ local function configure_auto_format()
           }
         end,
       },
+      javascript = {
+        function()
+          if pcall(require, 'prettier') then
+            return {
+              exe = 'prettier',
+              stdin = true,
+              args = {
+                '--check',
+                '-',
+              },
+            }
+          end
+          return nil
+        end,
+      },
       lua = {
         function()
           return {
