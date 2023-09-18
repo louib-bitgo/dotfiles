@@ -766,10 +766,13 @@ local function configure_lsp()
   -- ```
   -- require('lspconfig').terraform_lsp.setup({})
   -- ```
-  require('lspconfig').terraformls.setup({
-    on_attach = custom_lsp_attach,
-    flags = lsp_flags,
-  })
+  --
+  -- Commenting out this one since it requires authentication to get the validation
+  -- schemas https://github.com/hashicorp/terraform-ls/issues/128
+  -- require('lspconfig').terraformls.setup({
+  --   on_attach = custom_lsp_attach,
+  --   flags = lsp_flags,
+  -- })
 
   -- See https://github.com/neovim/nvim-lspconfig#suggested-configuration for
   -- the suggested top-level configuration and https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -778,7 +781,6 @@ local function configure_lsp()
   -- TODO add sumneko_lua support.
   -- TODO add eslint support?
   -- TODO add vanilla JS support?
-  -- TODO add dockerfile support?
   -- TODO add python support
 end
 
